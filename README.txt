@@ -1,0 +1,1 @@
+Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. Here I solve some of them as an exercise for coding and problem solving skills
