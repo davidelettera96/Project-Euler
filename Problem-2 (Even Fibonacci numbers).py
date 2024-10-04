@@ -1,8 +1,4 @@
 import numpy as np  
-import scipy as sp
-import matplotlib.pyplot as plt
-import random as r
-import math as mt
 
 # LINK TO THE PROBLEM https://projecteuler.net/problem=2
 

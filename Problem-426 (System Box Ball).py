@@ -1,5 +1,4 @@
 import time as time
-import random as rnd
 
 
 #LINK TO THE PROBLEM: https://projecteuler.net/problem=426
@@ -9,7 +8,7 @@ T0=time.time() #Time controller
 #GENERATE INITIAL SEQUENCE:
 s0 = int(290797) #initial condition
 t=[]
-for i in range(2002):
+for i in range(1000):
     t.append((s0%64)+1)
     s0 = (s0**2)%50515093
     
@@ -20,17 +19,6 @@ t[-1] = 3 * sum_t
     
 T1=time.time()
 print("Time to generate the initial condition",T1-T0)   #Time control
-
-
-#GENERATE TEST DATA (SOMETHING THAT CAN BE CHECKED BY HANDS)
-t1=[]
-for k in range(20):
-    t1.append(rnd.randint(1,15))
-
-t1=[2,2,2,1,2,10]
-
-sum_t = sum(t1[i * 2] for i in range(len(t1) // 2))
-t1[-1] = 3 * sum_t
 
     
 
@@ -114,8 +102,8 @@ def check(t):
     
 
 T3=time.time()
+#print("starting t",t)
 for k in range(1000000):
-    print(k)
     Check1=check(t)
     update(t)
     Check2=check(t)
