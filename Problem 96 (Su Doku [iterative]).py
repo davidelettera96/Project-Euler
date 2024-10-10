@@ -34,13 +34,13 @@ file_path = 'Problem 96 data/0096_matrix.txt'  # Change this to the path of your
 grids = import_grids(file_path)
 grids=np.array(grids)
 
-#Function that find the allowed moves at position Grid[i,i]=0 
+#Function that find the allowed moves at position Grid[i,j]=0 
 def FindMoves(Grid,i,j):
     Grid[i,j]=0
     MovesRow=np.array([1,2,3,4,5,6,7,8,9])
     MovesColumn=np.array([1,2,3,4,5,6,7,8,9])
     MovesSquare=np.array([1,2,3,4,5,6,7,8,9])
-    for k in range(8):
+    for k in range(9):
         MovesRow=np.delete(MovesRow,np.argwhere(MovesRow==Grid[i,k]))
         MovesColumn=np.delete(MovesColumn, np.argwhere(MovesColumn==Grid[k,j]))
         MovesSquare=np.delete(MovesSquare, np.argwhere(MovesSquare==Grid[3*(i//3)+k//3,3*(j//3)+k%3]))
@@ -88,7 +88,7 @@ print("Result=",sum(HiddenNumber))
 
 
 
-
+#This version solves the problem correctly with an iterative precedure. It is quite slow as it uses numpay instead of lists.
 
 
 
